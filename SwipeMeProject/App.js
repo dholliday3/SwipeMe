@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View, Text, Image, Value} from 'react-native';
+import { StackNavigator } from 'react-navigation'; // 1.0.0-beta.27
 
-export default class ButtonBasics extends Component {
+class HomeScreen extends Component {
   _onPressButton() {
     Alert.alert('You tapped the button!')
   }
@@ -29,6 +30,24 @@ export default class ButtonBasics extends Component {
   }
 }
 
+class DetailsScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Details Screen</Text>
+        <Button
+          title="Go to Details... again"
+          onPress={() => this.props.navigation.navigate('Details')}
+        />
+        <Button
+          title="Go back"
+          onPress={() => this.props.navigation.goBack()}
+        />
+      </View>
+    );
+  }
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1
@@ -49,5 +68,23 @@ const styles = StyleSheet.create({
   }
 })
 
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('AwesomeProject', () => ButtonBasics);
+const RootStack = StackNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
+    },
+    Details: {
+      screen: DetailsScreen,
+    },
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+export default class App extends Component {
+  render() {
+    return <RootStack />;
+  }
+}
+
