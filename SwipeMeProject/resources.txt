@@ -1,0 +1,2 @@
+[resources] 
+https://code.tutsplus.com/tutorials/common-react-native-app-layouts-login-page--cms-27639
