@@ -5,7 +5,6 @@
 
 # dependencies
 
-
 # misc
 .env.local
 .env.development.local
