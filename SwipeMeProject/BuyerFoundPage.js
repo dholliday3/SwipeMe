@@ -2,23 +2,29 @@ import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, Text, View, Image } from 'react-native';
 
 export default class ButtonBasics extends Component {
+  _onPressButton() {
+    Alert.alert("no")
+  }
+
   _onPressCancel() {
     Alert.alert("Are you sure?")
   }
 
-  _onFindingMatch() {
-    Confirm.confirm("Would you like to accept the match?")
-  }
-
   render() {
+    let pic = {
+        uri: 'https://res.cloudinary.com/teepublic/image/private/s--E-fxVegu--/t_Preview/b_rgb:ffffff,c_lpad,f_jpg,h_630,q_90,w_1200/v1515227040/production/designs/2258222_3.jpg'
+    };
     return (
       <View style={styles.container}>
 
-        <Text style = {styles.blue}>Waiting for a match...</Text> 
+        <Image source = {pic} style={{width: 200, height: 200}}/>
+        <Text style = {styles.blue}>Name: Ugandan Knuckles{'\n'}
+        Number: {'\t'}404-555-5555{'\n'}
+        ETA: {'\t'}5 minutes</Text> 
             
         <View style={styles.buttonContainer}>
             <Button
-                onPress={this._onFindingMatch}
+                onPress={this._onPressCancel}
                 title="Cancel sale"
                 color="#841584"
                 />
@@ -35,13 +41,17 @@ const styles = StyleSheet.create({
    alignItems: 'center',
   },
   buttonContainer: {
-    margin: 100
+    margin: 60
+  },
+  alternativeLayoutButtonContainer: {
+    margin: 40,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   blue: {
     fontSize: 20,
     color: 'blue',
-    textAlign: 'center',
-    marginTop: 100
+    marginLeft: 15
   },
 })
 
