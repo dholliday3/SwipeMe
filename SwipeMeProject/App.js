@@ -1,53 +1,52 @@
-import React, { Component } from 'react';
-import { Alert, AppRegistry, Button, StyleSheet, View, Text, Image, Value} from 'react-native';
+import React, { Component } from 'react'
+import {
+  DatePickerIOS,
+  View,
+  StyleSheet,
+  Picker,
+  Button,
+  Alert,
+  Text,
+  Image
+} from 'react-native'
 
-export default class ButtonBasics extends Component {
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { chosenDate: new Date() };
+    this.setDate = this.setDate.bind(this);
+  }
+
+  setDate(newDate) {
+    this.setState({chosenDate: newDate})
+  }
+
   _onPressButton() {
     Alert.alert('You tapped the button!')
   }
 
   render() {
+    let pic = {
+      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
+    };
     return (
-      <View style={styles.container}>
-        <View style={{width: '100%', height: '55%', backgroundColor: 'steelblue'}}
-        />
-        <View style={styles.buyButtonContainer}>
-          <Button style={{height: 100}}
-            onPress={this._onPressButton}
-            title="Buyer"
-          />
-        </View>
-        <View style={styles.sellButtonContainer}>
-          <Button
-            onPress={this._onPressButton}
-            title="Seller"
-            color="#841584"
-          />
-        </View>
-      </View>
+      <Image source={pic} style={styles.image}/>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
-   //justifyContent: 'center',
+    flex: 1,
+    justifyContent: 'center'
   },
-  buyButtonContainer: {
-    marginTop: 60,
-    flex: 2
+  buttonContainer: {
+    marginTop: 80
   },
-  sellButtonContainer: {
-    //margin: 10
-    flex: 3
-  },
-  alternativeLayoutButtonContainer: {
-    margin: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+  image: {
+    height: 100,
+    borderRadius: 50,
+    width: 100,
+    alignSelf: 'center'
   }
 })
-
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('AwesomeProject', () => ButtonBasics);
