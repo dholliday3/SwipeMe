@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View, Text, Image, Value} from 'react-native';
 
-export default class ButtonBasics extends Component {
+export default class HomePage extends Component {
   _onPressButton() {
     Alert.alert('You tapped the button!')
   }
@@ -49,5 +49,3 @@ const styles = StyleSheet.create({
   }
 })
 
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('AwesomeProject', () => ButtonBasics);

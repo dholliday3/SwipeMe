@@ -9,11 +9,10 @@ import {
   Text
 } from 'react-native'
 
-export default class App extends Component {
+export default class optionsPage2 extends Component {
   constructor(props) {
     super(props);
     this.state = { chosenDate: new Date() };
-
     this.setDate = this.setDate.bind(this);
   }
 
@@ -28,19 +27,17 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{fontSize: 70, fontStyle: 'italic', textAlign: 'center'}}>
-        Which Restaurant?
+        <Text style={{fontSize: 50, fontStyle: 'italic', textAlign: 'center'}}>
+        How Many Meal Swipes Will You Need?
         </Text>
         <Picker
           selectedValue={this.state.chosenDate}
           onValueChange={this.setDate}>
-          <Picker.Item label="Farm House" value="FH" />
-          <Picker.Item label="Local Chef" value="LC" />
-          <Picker.Item label="Olive" value="OL" />
-          <Picker.Item label="Panera Bread" value="PB" />
-          <Picker.Item label="Simple Servings" value="SS" />
-          <Picker.Item label="Spice Trail" value="ST" />
-          <Picker.Item label="Starbucks" value="SB" />
+          <Picker.Item label="1" value="one" />
+          <Picker.Item label="2" value="two" />
+          <Picker.Item label="3" value="three" />
+          <Picker.Item label="4" value="four" />
+          <Picker.Item label="More than 4" value="fiveplus" />
         </Picker>
 
         <View style={styles.buttonContainer}>
