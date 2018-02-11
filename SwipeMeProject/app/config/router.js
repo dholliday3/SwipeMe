@@ -10,7 +10,7 @@ import Signup from '../pages/signup';
 import BuyerConfirmed from '../pages/buyerFound';
 import Finished from '../pages/finished';
 import SellerWaiting from '../pages/sellerWaiting';
-
+import Transaction from '../pages/transaction';
 
 //functions
 export const Home = StackNavigator(
@@ -38,6 +38,9 @@ export const Home = StackNavigator(
     },
     sellerWaiting: {
       screen: SellerWaiting,
+    },
+    transaction: {
+      screen: Transaction,
     },
   },
   {
