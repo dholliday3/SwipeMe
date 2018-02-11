@@ -1,40 +1,21 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, Text, View, Image } from 'react-native';
 
-export default class ButtonBasics extends Component {
-/*  _onPressCancel() {
-    Alert.alert(
-      "Are you sure?",
-      'my alert message',
-      [
-        {text: 'Yes'},
-        {text: 'No'},
-        {text: 'Memes'}
-      ]
-      {cancelable: false}
-    )
-  }*/
+export default class FinishedScreen extends Component {
 
-  _onFindingMatch() {
-    Alert.alert(
-      "Would you like to accept the match?",
-      [
-        {text: 'Yes'},
-        {text: 'No'},
-      ],
-    )
+  _onPressHome() {
+    Alert.alert("Link to home screen.")
   }
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container}> 
+        <Text style = {styles.blue}>Thank you for your services!</Text>
 
-        <Text style = {styles.blue}>Waiting for a match...</Text> 
-            
         <View style={styles.buttonContainer}>
             <Button
-                onPress={this._onFindingMatch}
-                title="Cancel sale"
+                onPress={this._onPressHome}
+                title="Home"
                 color="#841584"
                 />
             </View>
@@ -56,7 +37,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'blue',
     textAlign: 'center',
-    marginTop: 100
+    marginTop: 120
   },
 })
 
