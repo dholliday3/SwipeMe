@@ -23,6 +23,7 @@
     "react": "16.2.0",
     "react-native": "0.52.0",
     "react-native-dropdown-latest": "0.0.8",
-    "react-native-dropdown-menu": "^1.1.0"
+    "react-native-dropdown-menu": "^1.1.0",
+    "react-navigation": "^1.0.3"
   }
 }

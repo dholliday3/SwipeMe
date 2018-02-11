@@ -9,7 +9,7 @@ import {
   Text
 } from 'react-native'
 
-export default class optionsPage1 extends Component {
+export default class OptionsPage1 extends Component {
   constructor(props) {
     super(props);
     this.state = { chosenDate: new Date() };
@@ -45,7 +45,7 @@ export default class optionsPage1 extends Component {
 
         <View style={styles.buttonContainer}>
           <Button
-            onPress={this._onPressButton}
+            onPress={() => this.props.navigation.navigate('optionsPage2')}
             title="Confirm"
             color="#841584"
           />

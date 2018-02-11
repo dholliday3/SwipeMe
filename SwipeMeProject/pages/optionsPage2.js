@@ -9,7 +9,7 @@ import {
   Text
 } from 'react-native'
 
-export default class optionsPage2 extends Component {
+export default class OptionsPage2 extends Component {
   constructor(props) {
     super(props);
     this.state = { chosenDate: new Date() };

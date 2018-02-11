@@ -13,7 +13,7 @@ export default class HomePage extends Component {
         />
         <View style={styles.buyButtonContainer}>
           <Button style={{height: 100}}
-            onPress={this._onPressButton}
+            onPress={() => this.props.navigation.navigate('optionsPage1')}
             title="Buyer"
           />
         </View>
@@ -48,4 +48,5 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   }
 })
+
 
