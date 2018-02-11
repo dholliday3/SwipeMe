@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, Text, View, Image } from 'react-native';
 
 export default class SellerWaiting extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+  _onPressHome() {
+    this.props.navigation.navigate('home');
+  }
+  //onPress: () => {this.props.navigation.navigate('home')}
   _onPressCancel() {
     Alert.alert(
       "Are you sure you want to cancel?",
       'You will be sent back to the home screen.',
       [
-        {text: 'Yes'},
+        {text: 'Yes'}, //onPress: () => {_onPressHome()}},
         {text: 'No'},
       ],
         //{cancelable: false}
