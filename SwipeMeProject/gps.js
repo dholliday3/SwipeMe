@@ -1,15 +1,20 @@
+
 import React, { Component } from 'react';
-import {AppRegistry, StyleSheet, Text, View, Dimensions } from 'react-native';
+import {AppRegistry, StyleSheet, Text, View, Dimensions,Button } from 'react-native';
 import MapView from 'react-native-maps';
 
 const {width, height} = Dimensions.get('window')
 const SCREEN_HEIGHT = height
 const SCREEN_WIDTH = width
 const ASPECT_RATIO = width / height
-const LATTITUDE_DELTA = 0.0922
+const LATTITUDE_DELTA = 0.0092
 const LONGITUDE_DELTA = LATTITUDE_DELTA * ASPECT_RATIO
 
 export default class App extends Component {
+  _onPressButton() {
+    Alert.alert('You tapped the button!')
+  }
+
   constructor(props) {
     super(props)
 
@@ -80,6 +85,17 @@ export default class App extends Component {
               </View>
             </MapView.Marker>
         </MapView>
+        <View style={styles.alternativeLayoutButtonContainer}>
+          <Button
+            onPress={this._onPressButton}
+            title="Buyer"
+          />
+          <Button
+            onPress={this._onPressButton}
+            title="Seller"
+            color="#841584"
+          />
+        </View>
       </View>
     );
   }
@@ -108,8 +124,8 @@ const styles = StyleSheet.create({
   },
   container: {
     flex:1,
-    justifyContent: 'center',
-    alignItems:'center',
+    //justifyContent: 'center',
+    //alignItems:'center',
     backgroundColor: '#F5FCFF'
   },
   map: {
@@ -128,5 +144,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
-  }
+  },
+  alternativeLayoutButtonContainer: {
+    top:600,
+    alignItems:'center',
+    justifyContent:'center',
+    flexDirection: 'row',
+  },
 });
