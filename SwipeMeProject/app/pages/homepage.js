@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View, Text, Image, Value} from 'react-native';
+import { isInLocation } from '../config/model';
 
 export default class HomePage extends Component {
-  _onPressButton() {
-    Alert.alert('You tapped the button!')
+  _onPressButton = () => {
+    var location = isInLocation(1, 1, 1, 1);
+    Alert.alert('You tapped the button! ' + location)
     //Todo1: need to do something when touch seller photo
   }
 
@@ -20,7 +22,7 @@ export default class HomePage extends Component {
         </View>
         <View style={styles.sellButtonContainer}>
           <Button
-            onPress={() => this.props.navigation.navigate('profile')}
+            onPress={this._onPressButton}
             title="Sell"
             color="#841584"
           />
